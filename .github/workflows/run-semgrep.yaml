@@ -17,7 +17,7 @@ jobs:
           repository: decurity/semgrep-smart-contracts
           path: rules
           
-      - run: semgrep ci --sarif --output=semgrep.sarif || true
+      - run: semgrep ci --sarif --output=semgrep.sarif --scan-all-files || true
         env:
            SEMGREP_RULES: rules/solidity/security rules/solidity/performance
       - name: Upload findings to GitHub Advanced Security Dashboard
